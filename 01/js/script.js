@@ -12,6 +12,7 @@ $(function () {
     });
     // 메뉴에 마우스가 나갔을 때
     $menu.on("mouseenter", function () {
+        // 테스트 주석
         $submenu.stop().slideUp(duration);
         $menu.removeeClass("on");
     });
