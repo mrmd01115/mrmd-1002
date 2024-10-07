@@ -5,12 +5,13 @@ $(function () {
 
     console.log($tabMenu, $tabCon);
 
-    // 처음 세팅
-    $tabMenu.removeClass("on");
-    $tabMenu.eq(0).addClass("on");
+    // // 처음 세팅
+    tabAction(0);
+    // $tabMenu.removeClass("on");
+    // $tabMenu.eq(0).addClass("on");
 
-    $tabCon.hide();
-    $tabCon.eq(0).show();
+    // $tabCon.hide();
+    // $tabCon.eq(0).show();
 
     // 탭메뉴를 클릭했을 때
     $tabMenu.on("click", function (e) {
@@ -20,7 +21,9 @@ $(function () {
         // ?선택한 탭메뉴의 인덱스를 구하기
         const tabIdx = $(this).index();
         console.log(tabIdx);
+    });
 
+    function tabAction(index) {
         // 탭메뉴 활성화
         $tabMenu.removeClass("on");
         $tabMenu.eq(tabIdx).addClass("on");
@@ -28,5 +31,5 @@ $(function () {
         // 인덱스에 해당하는 $tabCon 보이기
         $tabCon.hide();
         $tabCon.eq(tabIdx).show();
-    });
+    }
 });
